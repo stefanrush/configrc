@@ -1,0 +1,27 @@
+"ss"
+    m:0x10 + c:107
+    Mod2 + Print
+ 
+"dmenu_run -fn 'Ubuntu Mono:size=12' -nb '#272822' -nf '#F1EBEB' -sb '#A7E22E' -sf '#272822'"
+    m:0x40 + c:33
+    Mod4 + p
+ 
+"termite"
+    m:0x40 + c:36
+    Mod4 + Return
+ 
+"subl3"
+    m:0x40 + c:51
+    Mod4 + backslash
+ 
+"chromium"
+    m:0x40 + c:48
+    Mod4 + apostrophe
+ 
+"chromium --incognito"
+    m:0x41 + c:48
+    Shift+Mod4 + apostrophe
+
+"chromium --proxy-server='socks://localhost:9050' --incognito"
+    m:0x55 + c:48
+    Control+Shift+Mod2+Mod4 + apostrophe
