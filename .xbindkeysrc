@@ -1,4 +1,4 @@
-"ss"
+"scrot $HOME/images/screenshots/%Y-%m-%d_%H-%M-%S.png"
     m:0x10 + c:107
     Mod2 + Print
  
@@ -17,7 +17,11 @@
 "chromium"
     m:0x40 + c:48
     Mod4 + apostrophe
- 
+
+"chromium --proxy-server='socks://localhost:9050'"
+    m:0x54 + c:48
+    Control+Mod2+Mod4 + apostrophe
+
 "chromium --incognito"
     m:0x41 + c:48
     Shift+Mod4 + apostrophe
