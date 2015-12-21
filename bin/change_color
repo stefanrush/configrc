@@ -1,1 +1,52 @@
-/home/stefan/bin/change_color
+#!/bin/bash
+
+change_color()
+{
+    read name new_code < <(sed -r 's/[a-zA-Z0-9]+/&/' <<< "$1")
+    
+    code="[a-zA-Z0-9]\{6\}"
+
+    i3_config="$HOME/.config/i3/config"
+    declare -a i3_keys=("\tfocused_workspace" "\tactive_workspace" "client\.focused")
+
+    for i3_key in "${i3_keys[@]}"
+    do
+        sed -ie 's/\('$i3_key'\)\(\s\+#\)'$code'\(\s\+#\)'$code'/\1\2'$new_code'\3'$new_code'/' $i3_config
+    done
+
+    i3-msg --quiet reload
+
+    conky_config="$HOME/.config/conky/conky.conf"
+    conky_key="default_color"
+
+    sed -ie 's/\('$conky_key'\)\s\+'$code'/\1 '$new_code'/' $conky_config
+
+    killall -SIGUSR1 conky
+
+    echo Color changed to ${name,,} ${new_code,,}.
+}
+
+PS3="Select a color: "
+select color in \
+    "Red    FA2772" \
+    "Green  A7E22E" \
+    "Yellow E7DB75" \
+    "Blue   66D9EE" \
+    "Purple AE82FF" \
+    "Cyan   66EFD5"
+do
+    if [ “$REPLY” == “exit” -o "$REPLY" == "e" ]; then
+        echo Exiting without changing color.
+        break
+    fi
+    case $REPLY in
+        [1-6])
+            change_color "$color"
+            break
+            ;;
+        *)
+            echo $REPLY is not a valid option.
+            ;;
+    esac
+done
+

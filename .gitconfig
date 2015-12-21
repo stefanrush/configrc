@@ -1,1 +1,5 @@
-/home/stefan/.gitconfig
+[user]
+	email = stefanrush@gmail.com
+	name = Stefan Rush
+[push]
+	default = simple
