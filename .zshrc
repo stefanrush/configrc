@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.aliases
 
-export TERM="xterm-termite"
+export TERM="xterm"
 export TERMINAL="termite"
 export VISUAL="vim"
 export EDITOR="subl"
