@@ -85,7 +85,9 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.aliases
 
+export TERM="xterm-termite"
 export TERMINAL="termite"
 export VISUAL="vim"
 export EDITOR="subl"
 export BROWSER="chromium"
+

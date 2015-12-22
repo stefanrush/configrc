@@ -1,5 +1,6 @@
 alias t='termite'
 alias s='subl3 .'
+alias subl='subl3'
 alias c='chromium'
 alias ci='chromium --incognito'
 alias ct='chromium --proxy-server="socks://localhost:9050" --incognito'
